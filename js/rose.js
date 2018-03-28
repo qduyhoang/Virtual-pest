@@ -8,7 +8,7 @@ var countdown =  /* global $ */$("#countdown").countdown360({
 });
 countdown.start();
 
-$('body').css("background-image", "url(trees/rosesbackground.jpeg)")
+$('body').css("background-image", "url(../res/rosesbackground.jpeg)")
 var supportedFlag = $.keyframe.isSupported();
 $.keyframe.debug = true;
 
@@ -105,43 +105,43 @@ setInterval(function(){
 		$("#petLevel").text('SEED');
 			//collect pet's image every 6 secs depending on pet's level
 			if (countdown.getTimeRemaining() >=50 ){
-			$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+			$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+			$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 			}
 	}
 	else if (time >=15 && time<40){
 				//collects the state of pet every 6 secs depending on pet's level
-			$("#tree").attr("src", "trees/1-rose-jumping-joy.gif");
+			$("#tree").attr("src", "../res/1-rose-jumping-joy.gif");
     	$("petLevel").text('YOUNG ROSE');
     	if (countdown.getTimeRemaining() >=50 ){
-			$("#tree").attr("src", "trees/1-rose-jumping-joy.gif");
+			$("#tree").attr("src", "../res/1-rose-jumping-joy.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/deadrose.gif");
+			$("#tree").attr("src", "../res/deadrose.gif");
 			}
 	}
 	
 	else if (time >=40 && time<70){
     	$("#petLevel").text('MATURE ROSE');
-    	$("#tree").attr("src", "trees/1-red-rose-blooming.gif");
+    	$("#tree").attr("src", "../res/1-red-rose-blooming.gif");
     	if (countdown.getTimeRemaining() >=50 ){
-			$("#tree").attr("src", "trees/1-red-rose-blooming.gif");
+			$("#tree").attr("src", "../res/1-red-rose-blooming.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/deadrose.gif");
+			$("#tree").attr("src", "../res/deadrose.gif");
 			}
 	}
 			
 	else if (time >70){
     	$("#petLevel").text('LOTS OF ROSES')
-    	$("#tree").attr("src", "trees/12-dancing-flowers.gif");
+    	$("#tree").attr("src", "../res/12-dancing-flowers.gif");
      	if (countdown.getTimeRemaining() >=50){
-			$("#tree").attr("src", "trees/12-dancing-flowers.gif");
+			$("#tree").attr("src", "../res/12-dancing-flowers.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/lotsofdeadroses.gif");
+			$("#tree").attr("src", "../res/lotsofdeadroses.gif");
 			}
 	}
 			
@@ -258,7 +258,7 @@ setInterval(function(){
 function reset(){
 	countdown.start();
 	time = 0
-	$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+	$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 	$("#surviveDay").removeClass("red");
 	cure();
 }

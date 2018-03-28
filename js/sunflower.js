@@ -8,7 +8,7 @@ var countdown =  /* global $ */$("#countdown").countdown360({
 });
 countdown.start();
 
-$('#body').css("background-image", "url(trees/sunflower-blossom-bloom-flowers-54267.jpeg)")
+$('#body').css("background-image", "url(../res/sunflower-blossom-bloom-flowers-54267.jpeg)")
 var supportedFlag = $.keyframe.isSupported();
 $.keyframe.debug = true;
 
@@ -106,43 +106,43 @@ setInterval(function(){
 		$("#petLevel").text('SEED');
 			//change pet's image depending on pet's level
 			if (countdown.getTimeRemaining() >=50 && $("#petState").text()!= "UNDER DISEASE"){
-			$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+			$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+			$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 			}
 	}
 	else if (time >=15 && time<40){
 				//collects the state of pet every 6 secs depending on pet's level
-			$("#tree").attr("src", "trees/9-sunflower-animated-1.gif");
+			$("#tree").attr("src", "../res/9-sunflower-animated-1.gif");
     	$("petLevel").text('YOUNG SUNFLOWER');
     	if (countdown.getTimeRemaining() >=50 && $("#petState").text()!= "UNDER DISEASE"){
-			$("#tree").attr("src", "trees/9-sunflower-animated-1.gif");
+			$("#tree").attr("src", "../res/9-sunflower-animated-1.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/animated-yellow-flower.gif");
+			$("#tree").attr("src", "../res/animated-yellow-flower.gif");
 			}
 	}
 	
 	else if (time >=40 && time<70){
     	$("#petLevel").text('SHINY SUNFLOWERS');
-    	$("#tree").attr("src", "trees/sunflower4070.gif");
+    	$("#tree").attr("src", "../res/sunflower4070.gif");
     	if (countdown.getTimeRemaining() >=50 && $("#petState").text()!= "UNDER DISEASE"){
-			$("#tree").attr("src", "trees/sunflower4070.gif");
+			$("#tree").attr("src", "../res/sunflower4070.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/animated-yellow-flower.gif");
+			$("#tree").attr("src", "../res/animated-yellow-flower.gif");
 			}
 	}
 			
 	else if (time >70){
     	$("#petLevel").text('LOTS OF SUNFLOWERS')
-    	$("#tree").attr("src", "trees/1-sunflowers-dancing.gif");
+    	$("#tree").attr("src", "../res/1-sunflowers-dancing.gif");
      	if (countdown.getTimeRemaining() >=50 && $("#petState").text()!= "UNDER DISEASE"){
-			$("#tree").attr("src", "trees/1-sunflowers-dancing.gif");
+			$("#tree").attr("src", "../res/1-sunflowers-dancing.gif");
 			}
 			else if (countdown.getTimeRemaining() <=0){
-			$("#tree").attr("src", "trees/deadsunflowers.jpg");
+			$("#tree").attr("src", "../res/deadsunflowers.jpg");
 			}
 	}
 			
@@ -258,7 +258,7 @@ setInterval(function(){
 function reset(){
 	countdown.start();
 	time = 0
-	$("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+	$("#tree").attr("src", "../res/animated-tree-image-0131.gif");
 	$("#surviveDay").removeClass("red");
 	cure();
 }

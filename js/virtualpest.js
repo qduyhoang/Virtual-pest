@@ -1,5 +1,3 @@
-//https://johnschult.mit-license.org/
-//countdown percentage
 var countdown =  /* global $ */$("#countdown").countdown360({
     fillStyle: "#8ac575", 
     radius      : 50,
@@ -208,14 +206,14 @@ function levelup() {
     level0 = setInterval(function() {
         if (time > 0 && time < 10) {
             $("#petLevel").text('SEED');
-            $("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+            $("#tree").attr("src", "../res/animated-tree-image-0131.gif");
             //collect pet's image every 6 secs depending on pet's level
             if (countdown.getTimeRemaining() >= 5) {
                 $("#petState").text("GROWING");
                 $("#petState").css("color", "green");
             }
             if (countdown.getTimeRemaining() <= 0) {
-                $("#tree").attr("src", "trees/animated-tree-image-0131.gif");
+                $("#tree").attr("src", "../res/animated-tree-image-0131.gif");
                 $("#petState").text("STOP GROWING");
                 $("#petState").css("color", "red");
             }
@@ -226,7 +224,7 @@ function levelup() {
     setTimeout(function() {
         if (time >= 10 && time < 25) {
             $("#petLevel").text('BABY TREE');
-            $("#tree").attr("src", "trees/oie_26175529p94GnXxa.gif");
+            $("#tree").attr("src", "../res/oie_26175529p94GnXxa.gif");
             countdown.start();
             countdown.addSeconds(20);
             clearInterval(level0);
@@ -240,7 +238,7 @@ function levelup() {
                     $("#petState").text("THIRSTY");
                     $("#petState").css("color", "red");
                 } else if (countdown.getTimeRemaining() <= 0) {
-                    $("#tree").attr("src", "trees/treeblow.gif");
+                    $("#tree").attr("src", "../res/treeblow.gif");
                 }
             }, 3000)
         }
@@ -251,7 +249,7 @@ function levelup() {
         if (time >= 25 && time < 100) {
             countdown.start();
             countdown.addSeconds(50);
-            $("#tree").attr("src", "trees/13-hot-tree-animated.gif");
+            $("#tree").attr("src", "../res/13-hot-tree-animated.gif");
             $("petLevel").text('YOUNG TREE');
 
             clearInterval(level1);
@@ -260,12 +258,12 @@ function levelup() {
             if (countdown.getTimeRemaining() >= 30 && $("#petState").text() !== "UNDER DISEASE" && $("#petState").text() !== "CONSUSMING THE BUGS") {
                 $("#petState").text("HAPPY");
                 $("#petState").css("color", "green");
-                $("#tree").attr("src", "trees/13-hot-tree-animated.gif");
+                $("#tree").attr("src", "../res/13-hot-tree-animated.gif");
             } else if (countdown.getTimeRemaining() < 20 && countdown.getTimeRemaining() >= 1 && $("#petState").text() != "UNDER DISEASE") {
                 $("#petState").text("THIRSTY");
                 $("#petState").css("color", "red");
             } else if (countdown.getTimeRemaining() <= 0 && $("#message").text() !== "Your pet ran away because it is mistreated") {
-                $("#tree").attr("src", "trees/treeblow.gif");
+                $("#tree").attr("src", "../res/treeblow.gif");
             }
 
         }, 4000)
@@ -277,7 +275,7 @@ function levelup() {
     /////////////////////////////////////////////////level 3
     setTimeout(function() {
         if (time >= 100) {
-            $("#tree").attr("src", "trees/treegrow.gif");
+            $("#tree").attr("src", "../res/treegrow.gif");
             countdown.start();
             countdown.addSeconds(20);
             $("petLevel").text('MATURE TREE');
@@ -287,14 +285,14 @@ function levelup() {
             if (countdown.getTimeRemaining() >= 50 && $("#petState").text() != "UNDER DISEASE" && $("#petState").text() !== "CONSUSMING THE BUGS") {
                 $("#petState").text("HAPPY");
                 $("#petState").css("color", "green");
-                $("#tree").attr("src", "trees/treegrow.gif");
+                $("#tree").attr("src", "../res/treegrow.gif");
 
             } else if (countdown.getTimeRemaining() < 50 && countdown.getTimeRemaining() >= 1 && $("#petState").text() != "UNDER DISEASE") {
                 $("#petState").text("THIRSTY");
                 $("#petState").css("color", "red");
 
             } else if (countdown.getTimeRemaining() <= 0 && $("#message").text() !== "Your pet ran away because it is mistreated") {
-                $("#tree").attr("src", "trees/treeblow.gif");
+                $("#tree").attr("src", "../res/treeblow.gif");
 
             }
         }, 4000)
@@ -348,7 +346,7 @@ function bug() {
         });
     } else if ($("#petState").text() == "THIRSTY") {
         $("#message").text("You throw bugs at your pet. He is consuming the bugs")
-        $("#tree").attr("src", "trees/eatbug.jpg");
+        $("#tree").attr("src", "../res/eatbug.jpg");
         var bugEating = setInterval(function() {
             //increase health
             countdown.extendTimer(1);
@@ -372,7 +370,7 @@ function sun() {
     if ($("#petState").text() == "HAPPY") {
         $("#petState").text("PHOTOSYNTHESIS");
         $("#petState").css("color", "orange");
-        $("#tree").attr("src", "trees/giphy.gif")
+        $("#tree").attr("src", "../res/giphy.gif")
         $("#message").text("Your pet is performing photosynthesis")
         //increase health
         var photosynthesis = setInterval(function() {
@@ -403,7 +401,7 @@ function sun() {
 
 function hit() {
     if ($("#petState").text() == "PHOTOSYNTHESIS") {
-        $("#tree").attr("src", "trees/funnytree.jpg");
+        $("#tree").attr("src", "../res/funnytree.jpg");
         $("#message").text("Your pet is not affected by lightning because it is currently in photosynthesis process")
     } else if ($("#petState").text() == "THIRSTY" || $("#petState").text() == "GOT STRUCK BY LIGHTNING") {
         $("#tree").attr("src", "");
