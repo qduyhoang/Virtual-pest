@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virtual Pest</title>
+
+	<body id="body">
+		<div id="hello1">Your pet has survived for</div>
+		<div id="hello2"><span id="time"></span> days</div>
+		<div id="surviveDay" class="ui container center aligned text message">YOUR <strong><span id="petLevel"></span></strong> IS CURRENTLY: <span id="petState"></span></div>
+			<div id="message" class="ui container center aligned text message"></div>
+		<div class="ui center aligned container">
+
+			<div id="petBackground" class="ui center aligned circular image">
+				<img id="tree" src="trees/animated-tree-image-0131.gif">
+			</div>
+			<div id="countdown"></div>
+			<button class="ui green button" style="width:100px,height:100px" onclick="feed()"><i class="theme icon"></i>Water</button>
+			<button class="ui yellow button" style="width:100px,height:100px" onclick="sun()"><i class="sun icon"></i>Expose to the sun</button>
+			<button class="ui violet button" style="width:100px,height:100px" onclick="bug()"><i class="bug icon"></i>Throw bugs</button>
+			<button class="ui grey button" style="width:100px,height:100px" onclick="hit()"><i class="lightning icon"></i>Strike with lightning</button>
+			<button class="ui red button" style="width:100px,height:100px" onclick="cure()"><i class="first aid icon"></i>Cure</button>
+			<button class="ui blue button" id="resetButton" style="width:100px,height:100px" onclick="reset()">Reset</button>
+		</div>
+	</body>
+
+</head>	
+
+<link rel="stylesheet" href="virtualpest.css">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script src="jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
+<script src='jquery.keyframes.min.js'></script>
+<script type="text/javascript" src="tree.js"></script>
+
+
+</html>

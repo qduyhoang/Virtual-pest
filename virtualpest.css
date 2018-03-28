@@ -1,0 +1,56 @@
+#petBackground{
+background-color: white;
+}
+#body{
+background-image: url('trees/nature-sky-twilight-grass-9198.jpg');  
+background-size: cover;
+}
+#tree{
+  width: 250px;
+  height: 250px;
+}
+.ui.circular.image{
+    border: 3px solid black;
+}
+canvas{
+    z-index: -1;
+}
+#petLevel{
+    color: green;
+}
+
+@-webkit-keyframes getSmall{
+  50%{
+    font-size: .5em;
+  }
+}
+@-webkit-keyframes getBig{
+  50%{
+    font-size: 4em;
+  }
+}
+
+
+#hello1{
+  margin: 30px;
+  font-size: 50px;
+  animation: getSmall 15s infinite;
+  text-align:center;
+}
+#hello2{
+  margin: 20px;
+  font-size: 50px;
+  animation: getBig 20s infinite;
+  text-align: center;
+}
+
+#c{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+
