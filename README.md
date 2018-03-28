@@ -4,7 +4,7 @@
  ***Finite state machine table
 |-------------------------|------------------------|---------------------------------------------------------|
 |     Current Status      |       Action           |                      Status                             |
-|-------------------------|:----------------------:|--------------------------------------------------------:|
+|;---;|:---:|;---:|
 |Happy                    |Water                   |1% health increase                                       |  
 |                         |                        |First two levels:                                        |
 |                         |                        |  - Reduce 60% health when pet's health is already full  |
