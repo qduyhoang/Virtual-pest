@@ -1,10 +1,10 @@
 # Virtual-pest
-  **If you keep your pet alive for a certain amount of days, it will grow. There are 4 levels that your pet can grow into.</h4>
+  **If you keep your pet alive for a certain amount of days, it will grow. There are 4 levels that your pet can grow into.
                                            
  ***Finite state machine table
 |-------------------------|------------------------|---------------------------------------------------------|
 |     Current Status      |       Action           |                      Status                             |
-|;---;|:---:|;---:|
+|-------------------------|------------------------|---------------------------------------------------------|
 |Happy                    |Water                   |1% health increase                                       |  
 |                         |                        |First two levels:                                        |
 |                         |                        |  - Reduce 60% health when pet's health is already full  |
