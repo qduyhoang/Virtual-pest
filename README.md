@@ -1,130 +1,52 @@
 # Virtual-pest
-<div class="ui container"> <h1>Story behind my pet</h1>
-      <h1>Instruction</h1>
-      <h3>If you keep your pet alive for a certain amount of days, it will grow. There are 4 levels that your pet can grow into.</h3>
-                                        
-        
+<div class="ui container"> 
+      <h4>If you keep your pet alive for a certain amount of days, it will grow. There are 4 levels that your pet can grow into.</h4>
+                                           
+      <h2>Finite state machine table</h2>
+|-------------------------|------------------------|---------------------------------------------------------|
+|     Current Status      |       Action           |                      Status                             |
+|-------------------------|------------------------|---------------------------------------------------------|
+|Happy                    |Water                   |1% health increase                                       |  
+|                         |                        |First two levels:                                        |
+|                         |                        |  - Reduce 60% health when pet's health is already full  |
+|                         |                        |  - Reduce 100% health when overwatered 2 times          |
+||------------------------|------------------------|---------------------------------------------------------|
+|                         |Expose to the sun       |Photosynthesis (10% health increase)                     |
+|                         |                        |                                                         |
+|                         |Throw Bugs              |Under Disease (Health decreasing constantly until cured) |
+|                         |                        |                                                         |
+|                         |Strike with Lightning   |Got struck by lightning(30% health decrease)             |
+|                         |                        |                                                         |
+|Thirsty                  |Water                   | 2% health increase                                      |
+|                         |                        |                                                         |
+|                         |Expose to the sun       |Withered (10% health decrease)                           |
+|                         |                        |                                                         |
+|                         |Throw bugs              | Consuming bugs (10% health increase)                    |
+|                         |                        |                                                         |
+|                         |Strike with lightning   |Run Away (100% health decrease)                          |
+|-------------------------|------------------------|---------------------------------------------------------|   
+|Under disease            |Cure                    |Remove under disease status(stop decreasing health)      |
+|                         |                        |                                                         |
+|                         |Water                   |5% health increase                                       |
+|                         |                        |                                                         |
+|                         |Expose to the sun       |Disease gets worse (Double speed of health decreasing)   |
+|                         |                        |                                                         |
+|                         |Strike with lightning   |Got struck by lightning(-30% health)                     |
+|                         |                        |                                                         |
+|                         |                        |Bugs die (Remove under disease status)                   |
+|-------------------------|------------------------|---------------------------------------------------------|
+|Got struck by Lightning  |Expose to the sun       |Can not perform Photosynthesis                           |
+|                         |                        |                                                         |
+|                         |Strike with Lightning   |Run Away (100% health decrease)                          |
+|-------------------------|------------------------|---------------------------------------------------------|
+|Photosynthesis           |Throw Bugs              |Under Disease (Health decreasing constantly until cured) |
+|                         |                        |                                                         |
+|                         |Expose to the sun       |Already in Photosynthesis                                |
+|                         |                        |                                                         |
+|                         |Strike with lightning   |Is not affected                                          |
+|-------------------------|------------------------|---------------------------------------------------------|  
+  
 
-    
-      
-      <h1>Finite state machine table</h1>
-       <table class="ui celled table">
-  <thead>
-    <tr>
-      <th>Current Status</th>
-      <th>Action</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="4">Happy</td>
-      <td>Water</td>
-      <td><li>1% health</li>
-          <li><em>First two levels:</em>-60% health when full</li> and -100% health when overwatered 2 times</td>
-    </tr>
-    
-    <tr>
-      <td>Expose to the sun</td>
-      <td><strong>Photosynthesis</strong> (+10% health)</td>
-    </tr>
-        <tr>
-      <td>Throw bugs</td>
-      <td><strong>Under Disease</strong> (-health constantly until cured)</td>
-    </tr>
-    
-    <tr>
-      <td>Strike with lightning</td>
-      <td><strong>Got struck by lightning</strong>(-30% health)</td>
-     </tr>
-     
-     
-      <tr>
-      <td rowspan="4">Thirsty</td>
-      <td>Water</td>
-      <td><li>+2% health</li></td>
-    </tr>
-    
-    <tr>
-      <td>Expose to the sun</td>
-      <td><strong>Withered</strong> (-10% health)</td>
-    </tr>
-        <tr>
-      <td>Throw bugs</td>
-      <td><strong>Consume the bugs</strong> ( +10% health)</td>
-    </tr>
-    
-    <tr>
-      <td>Strike with lightning</td>
-      <td><strong>Run away</strong></td>
-     </tr>
-     
-    
-    <tr>
-      <td rowspan="4">Under Disease</td>
-      <td>Cure</td>
-      <td>Cure the disease (stop decreasing health)</td>
-    </tr>
-    
-    <tr>
-      <td>Water</td>
-      <td>+5% health</td>
-     </tr>
-    <tr>
-      <td>Expose to the sun</td>
-      <td><strong>Disease gets worse</strong> (x2 number of bugs => x2 speed of decaying)</td>
-    </tr>
-    
-    
-    <tr>
-      <td>Strike with lightning</td>
-      <td><li><strong>Got struck by lightning</strong>(-30% health)</li>
-          <li><strong>Bugs die</strong> (Disease dissapears)</li></td>
-     </tr>
-     
-     
-     
-   <tr>
-      <td rowspan="3">Got struck by lightning</td>
-      <td>Water</td>
-      <td>+5% health</td>
-    </tr>
-    
-    <tr>
-      <td>Expose to the sun</td>
-      <td><strong>Can not perform photosynthesis</strong></td>
-    </tr>
-    
-    
-    <tr>
-      <td>Strike with lightning</td>
-      <td><strong>Run away</strong></td>
-     </tr>
-     
-       <tr>
-      <td rowspan="3">Photosynthesis</td>
-      <td>Throw bugs</td>
-      <td><strong>Under Diseasae</strong>(-health constantly until cured)</td>
-    </tr>
-    
-    <tr>
-      <td>Expose to the sun</td>
-      <td><strong>Already in photosynthesis</strong></td>
-    </tr>
-    
-    
-    <tr>
-      <td>Strike with lightning</td>
-      <td><strong>Is not affected</strong></td>
-     </tr>
-  </tbody>
-</table>
-<h2>Randomness ( when pet > 30 days) :
-  <h3>
-    <ul>
-      <li>Random Disease : 30% chance every 8 seconds</li>
-      <li>Random Lightning: 30% chance every 11 seconds</li>
-    </ul>
-  </h3>
-</h2>
-</div>
+**Randomness ( when pet > 30 days) :
+    *Random Disease : 30% chance every 8 seconds
+    *Random Lightning: 30% chance every 11 seconds
